@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Glass Bezel Interface</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.brnbw.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Glass Bezel Interface</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>QSPlugIn</key>
+	<dict>
+		<key>author</key>
+		<string>BRNBW / Mikkel Malmberg</string>
+		<key>categories</key>
+		<array>
+			<string>Interfaces</string>
+		</array>
+		<key>description</key>
+		<string>A whiter version of the classic Bezel Interface</string>
+	</dict>
+	<key>QSRegistration</key>
+	<dict>
+		<key>QSCommandInterfaceControllers</key>
+		<dict>
+			<key>Glass Bezel</key>
+			<string>BBGlassBezelInterface</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

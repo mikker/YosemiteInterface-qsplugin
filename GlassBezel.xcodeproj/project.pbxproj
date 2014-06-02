@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42663058193CC1FA00C0DD31 /* BBGlassBezelInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */; };
+		E470B7E31709F3A0000169F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E470B7E21709F3A0000169F2 /* Cocoa.framework */; };
+		E470B7E91709F3A0000169F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E470B7E71709F3A0000169F2 /* InfoPlist.strings */; };
+		E470B7F81709F3A0000169F2 /* BBGlassBezelInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = E470B7F71709F3A0000169F2 /* BBGlassBezelInterface.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBGlassBezelInterface.xib; sourceTree = "<group>"; };
+		E470B7DF1709F3A0000169F2 /* GlassBezel.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlassBezel.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E470B7E21709F3A0000169F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E470B7E61709F3A0000169F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E470B7E81709F3A0000169F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E470B7EB1709F3A0000169F2 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		E470B7EC1709F3A0000169F2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		E470B7ED1709F3A0000169F2 /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		E470B7EE1709F3A0000169F2 /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		E470B7EF1709F3A0000169F2 /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		E470B7F01709F3A0000169F2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		E470B7F61709F3A0000169F2 /* BBGlassBezelInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBGlassBezelInterface.h; sourceTree = "<group>"; };
+		E470B7F71709F3A0000169F2 /* BBGlassBezelInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBGlassBezelInterface.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E470B7DC1709F3A0000169F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E470B7E31709F3A0000169F2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E470B7D51709F3A0000169F2 = {
+			isa = PBXGroup;
+			children = (
+				E470B7E41709F3A0000169F2 /* GlassBezel */,
+				E470B7E11709F3A0000169F2 /* Frameworks */,
+				E470B7E01709F3A0000169F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E470B7E01709F3A0000169F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E470B7DF1709F3A0000169F2 /* GlassBezel.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E470B7E11709F3A0000169F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E470B7E21709F3A0000169F2 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E470B7E41709F3A0000169F2 /* GlassBezel */ = {
+			isa = PBXGroup;
+			children = (
+				E470B7F61709F3A0000169F2 /* BBGlassBezelInterface.h */,
+				E470B7F71709F3A0000169F2 /* BBGlassBezelInterface.m */,
+				42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */,
+				E470B7EA1709F3A0000169F2 /* Configuration */,
+				E470B7E51709F3A0000169F2 /* Supporting Files */,
+			);
+			path = GlassBezel;
+			sourceTree = "<group>";
+		};
+		E470B7E51709F3A0000169F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E470B7E61709F3A0000169F2 /* Info.plist */,
+				E470B7E71709F3A0000169F2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E470B7EA1709F3A0000169F2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E470B7EB1709F3A0000169F2 /* Common.xcconfig */,
+				E470B7EC1709F3A0000169F2 /* Debug.xcconfig */,
+				E470B7ED1709F3A0000169F2 /* Developer.xcconfig */,
+				E470B7EE1709F3A0000169F2 /* QSPlugIn.xcconfig */,
+				E470B7EF1709F3A0000169F2 /* Quicksilver.pch */,
+				E470B7F01709F3A0000169F2 /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = /private/tmp/QS/Configuration;
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E470B7DE1709F3A0000169F2 /* GlassBezel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E470B7FB1709F3A0000169F2 /* Build configuration list for PBXNativeTarget "GlassBezel" */;
+			buildPhases = (
+				E470B7DA1709F3A0000169F2 /* ShellScript */,
+				E470B7DB1709F3A0000169F2 /* Sources */,
+				E470B7DC1709F3A0000169F2 /* Frameworks */,
+				E470B7DD1709F3A0000169F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlassBezel;
+			productName = SquareBezel;
+			productReference = E470B7DF1709F3A0000169F2 /* GlassBezel.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E470B7D61709F3A0000169F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = BRNBW;
+			};
+			buildConfigurationList = E470B7D91709F3A0000169F2 /* Build configuration list for PBXProject "GlassBezel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E470B7D51709F3A0000169F2;
+			productRefGroup = E470B7E01709F3A0000169F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E470B7DE1709F3A0000169F2 /* GlassBezel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E470B7DD1709F3A0000169F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42663058193CC1FA00C0DD31 /* BBGlassBezelInterface.xib in Resources */,
+				E470B7E91709F3A0000169F2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E470B7DA1709F3A0000169F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E470B7DB1709F3A0000169F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E470B7F81709F3A0000169F2 /* BBGlassBezelInterface.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E470B7E71709F3A0000169F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E470B7E81709F3A0000169F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E470B7F91709F3A0000169F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E470B7EC1709F3A0000169F2 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E470B7FA1709F3A0000169F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E470B7F01709F3A0000169F2 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E470B7FC1709F3A0000169F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E470B7EE1709F3A0000169F2 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = GlassBezel;
+			};
+			name = Debug;
+		};
+		E470B7FD1709F3A0000169F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E470B7EE1709F3A0000169F2 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = GlassBezel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E470B7D91709F3A0000169F2 /* Build configuration list for PBXProject "GlassBezel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E470B7F91709F3A0000169F2 /* Debug */,
+				E470B7FA1709F3A0000169F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E470B7FB1709F3A0000169F2 /* Build configuration list for PBXNativeTarget "GlassBezel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E470B7FC1709F3A0000169F2 /* Debug */,
+				E470B7FD1709F3A0000169F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E470B7D61709F3A0000169F2 /* Project object */;
+}
