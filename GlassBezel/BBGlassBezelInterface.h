@@ -1,8 +1,11 @@
-/* QSController */
-
 @interface BBGlassBezelInterface : QSResizingInterfaceController {
 	NSRect standardRect;
 }
+
+@property (assign) IBOutlet NSImageView *image1;
+@property (assign) IBOutlet NSImageView *image2;
+@property (assign) IBOutlet NSImageView *image3;
+
 @end
 
 @interface NSWindow (QSBCInterfaceController)

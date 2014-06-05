@@ -5,12 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="QSBezelInterfaceController">
+        <customObject id="-2" userLabel="File's Owner" customClass="BBGlassBezelInterface">
             <connections>
                 <outlet property="aSelector" destination="69" id="79"/>
                 <outlet property="commandView" destination="191" id="207"/>
                 <outlet property="dSelector" destination="68" id="75"/>
                 <outlet property="iSelector" destination="70" id="80"/>
+                <outlet property="image1" destination="S8q-MZ-fL5" id="HCl-xQ-vjg"/>
+                <outlet property="image2" destination="uUV-nq-ynw" id="b1Z-fK-pMU"/>
+                <outlet property="image3" destination="sTo-71-7U1" id="m1e-ei-BSk"/>
                 <outlet property="menuButton" destination="209" id="210"/>
                 <outlet property="progressIndicator" destination="192" id="211"/>
                 <outlet property="window" destination="9" id="78"/>
@@ -28,29 +31,18 @@
                 <rect key="frame" x="0.0" y="6" width="680" height="192"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="68" customClass="QSCollectingSearchObjectView">
+                    <customView id="68" customClass="BBCollectingSearchObjectView">
                         <rect key="frame" x="0.0" y="128" width="680" height="64"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <connections>
                             <outlet property="nextKeyView" destination="69" id="105"/>
                         </connections>
                     </customView>
-                    <customView id="70" customClass="QSCollectingSearchObjectView">
+                    <customView id="70" customClass="BBCollectingSearchObjectView">
                         <rect key="frame" x="0.0" y="0.0" width="680" height="64"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <connections>
                             <outlet property="nextKeyView" destination="68" id="104"/>
-                        </connections>
-                    </customView>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="192">
-                        <rect key="frame" x="659" y="133" width="16" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                    </progressIndicator>
-                    <customView id="69" customClass="QSSearchObjectView">
-                        <rect key="frame" x="0.0" y="64" width="680" height="64"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                        <connections>
-                            <outlet property="nextKeyView" destination="70" id="106"/>
                         </connections>
                     </customView>
                     <textField verticalHuggingPriority="750" id="191">
@@ -70,6 +62,32 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="192">
+                        <rect key="frame" x="659" y="133" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                    </progressIndicator>
+                    <customView id="69" customClass="BBSearchObjectView">
+                        <rect key="frame" x="0.0" y="64" width="680" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <connections>
+                            <outlet property="nextKeyView" destination="70" id="106"/>
+                        </connections>
+                    </customView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="S8q-MZ-fL5">
+                        <rect key="frame" x="11" y="144" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ios7-search-strong" id="OBR-2L-PFT"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uUV-nq-ynw">
+                        <rect key="frame" x="11" y="80" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ios7-gear" id="QDG-4n-8VQ"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sTo-71-7U1">
+                        <rect key="frame" x="11" y="16" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ios7-search-strong" id="1gF-py-hUu"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
@@ -79,4 +97,8 @@
             <point key="canvasLocation" x="369" y="497"/>
         </window>
     </objects>
+    <resources>
+        <image name="ios7-gear" width="512" height="512"/>
+        <image name="ios7-search-strong" width="512" height="512"/>
+    </resources>
 </document>
