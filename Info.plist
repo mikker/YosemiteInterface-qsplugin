@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Glass Bezel Interface</string>
+	<string>Yosemite Interface</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Glass Bezel Interface</string>
+	<string>Yosemite Interface</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -29,14 +29,14 @@
 			<string>Interfaces</string>
 		</array>
 		<key>description</key>
-		<string>A whiter version of the classic Bezel Interface</string>
+		<string>A theme matching Yosemite&apos;s Spotlight</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
 		<key>QSCommandInterfaceControllers</key>
 		<dict>
-			<key>Glass Bezel</key>
-			<string>BBGlassBezelInterface</string>
+			<key>Yosemite</key>
+			<string>BBYosemiteInterface</string>
 		</dict>
 	</dict>
 </dict>

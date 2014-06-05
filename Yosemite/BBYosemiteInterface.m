@@ -1,14 +1,14 @@
-#import "BBGlassBezelInterface.h"
+#import "BBYosemiteInterface.h"
 
-@interface BBGlassBezelInterface () {
+@interface BBYosemiteInterface () {
   CGRect initialRect;
 }
 @end
 
-@implementation BBGlassBezelInterface
+@implementation BBYosemiteInterface
 
 - (id)init {
-	return [self initWithWindowNibName:@"BBGlassBezelInterface"];
+	return [self initWithWindowNibName:@"BBYosemiteInterface"];
 }
 
 - (void)windowDidLoad {

@@ -1,11 +1,3 @@
-//
-//  BBBackgroundView.m
-//  GlassBezel
-//
-//  Created by Mikkel Malmberg on 04/06/14.
-//  Copyright (c) 2014 BRNBW. All rights reserved.
-//
-
 #import "BBBackgroundView.h"
 
 @implementation BBBackgroundView

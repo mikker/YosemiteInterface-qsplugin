@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="BBGlassBezelInterface">
+        <customObject id="-2" userLabel="File's Owner" customClass="BBYosemiteInterface">
             <connections>
                 <outlet property="aSelector" destination="69" id="79"/>
                 <outlet property="commandView" destination="191" id="207"/>

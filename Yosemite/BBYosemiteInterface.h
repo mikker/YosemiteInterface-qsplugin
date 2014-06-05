@@ -1,4 +1,4 @@
-@interface BBGlassBezelInterface : QSResizingInterfaceController {
+@interface BBYosemiteInterface : QSResizingInterfaceController {
 	NSRect standardRect;
 }
 
