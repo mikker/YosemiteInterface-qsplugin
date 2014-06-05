@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42447D7A193F6C9D0077B4B2 /* BBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42447D79193F6C9D0077B4B2 /* BBBackgroundView.m */; };
 		42663058193CC1FA00C0DD31 /* BBGlassBezelInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */; };
 		E470B7E31709F3A0000169F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E470B7E21709F3A0000169F2 /* Cocoa.framework */; };
 		E470B7E91709F3A0000169F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E470B7E71709F3A0000169F2 /* InfoPlist.strings */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42447D78193F6C9D0077B4B2 /* BBBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBackgroundView.h; sourceTree = "<group>"; };
+		42447D79193F6C9D0077B4B2 /* BBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBackgroundView.m; sourceTree = "<group>"; };
 		42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBGlassBezelInterface.xib; sourceTree = "<group>"; };
 		E470B7DF1709F3A0000169F2 /* GlassBezel.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlassBezel.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E470B7E21709F3A0000169F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -74,6 +77,8 @@
 				42663057193CC1FA00C0DD31 /* BBGlassBezelInterface.xib */,
 				E470B7EA1709F3A0000169F2 /* Configuration */,
 				E470B7E51709F3A0000169F2 /* Supporting Files */,
+				42447D78193F6C9D0077B4B2 /* BBBackgroundView.h */,
+				42447D79193F6C9D0077B4B2 /* BBBackgroundView.m */,
 			);
 			path = GlassBezel;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42447D7A193F6C9D0077B4B2 /* BBBackgroundView.m in Sources */,
 				E470B7F81709F3A0000169F2 /* BBGlassBezelInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

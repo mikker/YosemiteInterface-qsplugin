@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="QSBezelInterfaceController">
@@ -10,7 +10,6 @@
                 <outlet property="aSelector" destination="69" id="79"/>
                 <outlet property="commandView" destination="191" id="207"/>
                 <outlet property="dSelector" destination="68" id="75"/>
-                <outlet property="details" destination="205" id="206"/>
                 <outlet property="iSelector" destination="70" id="80"/>
                 <outlet property="menuButton" destination="209" id="210"/>
                 <outlet property="progressIndicator" destination="192" id="211"/>
@@ -22,36 +21,40 @@
         <window title="Bezel Interface" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="9" userLabel="mainWindow" customClass="QSBorderlessWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" nonactivatingPanel="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="530" y="653" width="530" height="202"/>
+            <rect key="contentRect" x="530" y="653" width="680" height="192"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
-            <value key="minSize" type="size" width="213" height="107"/>
-            <view key="contentView" id="6" customClass="QSBezelBackgroundView">
-                <rect key="frame" x="0.0" y="0.0" width="530" height="202"/>
+            <value key="minSize" type="size" width="680" height="107"/>
+            <view key="contentView" id="6" customClass="BBBackgroundView">
+                <rect key="frame" x="0.0" y="6" width="680" height="192"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="70" customClass="QSCollectingSearchObjectView">
-                        <rect key="frame" x="353" y="25" width="160" height="160"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                        <connections>
-                            <outlet property="nextKeyView" destination="68" id="104"/>
-                        </connections>
-                    </customView>
-                    <customView id="69" customClass="QSSearchObjectView">
-                        <rect key="frame" x="185" y="25" width="160" height="160"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                        <connections>
-                            <outlet property="nextKeyView" destination="70" id="106"/>
-                        </connections>
-                    </customView>
                     <customView id="68" customClass="QSCollectingSearchObjectView">
-                        <rect key="frame" x="17" y="25" width="160" height="160"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                        <rect key="frame" x="0.0" y="128" width="680" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <connections>
                             <outlet property="nextKeyView" destination="69" id="105"/>
                         </connections>
                     </customView>
+                    <customView id="70" customClass="QSCollectingSearchObjectView">
+                        <rect key="frame" x="0.0" y="0.0" width="680" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <connections>
+                            <outlet property="nextKeyView" destination="68" id="104"/>
+                        </connections>
+                    </customView>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="192">
+                        <rect key="frame" x="659" y="133" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                    </progressIndicator>
+                    <customView id="69" customClass="QSSearchObjectView">
+                        <rect key="frame" x="0.0" y="64" width="680" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <connections>
+                            <outlet property="nextKeyView" destination="70" id="106"/>
+                        </connections>
+                    </customView>
                     <textField verticalHuggingPriority="750" id="191">
-                        <rect key="frame" x="499" y="183" width="27" height="17"/>
+                        <rect key="frame" x="655" y="175" width="27" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title="▾" id="214">
                             <font key="font" metaFont="systemBold"/>
@@ -59,21 +62,8 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="192">
-                        <rect key="frame" x="505" y="4" width="16" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                    </progressIndicator>
-                    <textField verticalHuggingPriority="750" id="205">
-                        <rect key="frame" x="15" y="5" width="493" height="13"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="center" title="Small System Font Text" id="215">
-                            <font key="font" metaFont="miniSystem"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <button id="209" customClass="QSMenuButton">
-                        <rect key="frame" x="502" y="183" width="21" height="17"/>
+                        <rect key="frame" x="656" y="174" width="21" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="square" title="▾" bezelStyle="shadowlessSquare" alignment="center" transparent="YES" inset="2" id="216">
                             <behavior key="behavior" lightByContents="YES"/>
@@ -86,6 +76,7 @@
                 <outlet property="delegate" destination="-2" id="81"/>
                 <outlet property="initialFirstResponder" destination="68" id="111"/>
             </connections>
+            <point key="canvasLocation" x="369" y="497"/>
         </window>
     </objects>
 </document>
