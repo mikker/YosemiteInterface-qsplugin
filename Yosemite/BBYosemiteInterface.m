@@ -34,12 +34,12 @@
   for(QSSearchObjectView *theControl in theControls) {
     QSObjectCell *theCell = [theControl cell];
 
-    [theControl setResultsPadding:NSMinY([dSelector frame])];
-    [theControl setPreferredEdge:NSMaxXEdge];
+    [theControl setResultsPadding:NSMinX([dSelector frame])];
+    [theControl setPreferredEdge:NSMinY([dSelector frame])];
     [theControl setTextCellFont:[NSFont systemFontOfSize:16]];
 
-    [(QSWindow *)[(theControl)->resultController window] setHideOffset:NSMakePoint(0, NSMinX([iSelector frame]))];
-    [(QSWindow *)[(theControl)->resultController window] setShowOffset:NSMakePoint(0, NSMinX([dSelector frame]))];
+    [(QSWindow *)[(theControl)->resultController window] setHideOffset:NSMakePoint(NSMaxX([iSelector frame]), 0)];
+    [(QSWindow *)[(theControl)->resultController window] setShowOffset:NSMakePoint(NSMaxX([dSelector frame]), 0)];
     
     [theCell setBackgroundColor:[NSColor clearColor]];
     [theCell setHighlightColor:[NSColor colorWithRed:0 green:0 blue:0 alpha:.1]];
@@ -95,13 +95,15 @@
 - (NSRect)rectForState:(BOOL)shouldExpand {
   NSRect newRect = initialRect;
   NSRect screenRect = [[NSScreen mainScreen] frame];
-  
+
+  float padding = 0;
   if (!shouldExpand) {
     newRect.size.height -= 64;
+  } else {
+    padding = 32;
   }
   
-  NSLog(@"pos:%f", NSHeight(screenRect) / 4.0);
-  return NSOffsetRect(centerRectInRect(newRect, screenRect), 0, NSHeight(screenRect) / 4);
+  return NSOffsetRect(centerRectInRect(newRect, screenRect), 0, (NSHeight(screenRect) / 5) - padding);
 }
 
 - (NSRect)window:(NSWindow *)window willPositionSheet:(NSWindow *)sheet usingRect:(NSRect)rect {
