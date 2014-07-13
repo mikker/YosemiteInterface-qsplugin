@@ -10,12 +10,12 @@
 
 @implementation BBObjectCell
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
+- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {  
   BOOL isFirstResponder = [[controlView window] firstResponder] == controlView && ![controlView isKindOfClass:[NSTableView class]];
   BOOL dropTarget = ([self isHighlighted] && ([self highlightsBy] & NSChangeBackgroundCellMask) && ![self isBezeled]);
 
 	NSColor *fillColor;
-	NSColor *strokeColor;
+	NSColor *strokeColor = [NSColor clearColor];
 
   if (isFirstResponder) {
     fillColor = [self highlightColor];
@@ -24,10 +24,8 @@
   }
 
   if (dropTarget) {
-    fillColor = [fillColor blendedColorWithFraction:0.1 ofColor:[self textColor] ?[self textColor] :[NSColor textColor]];
+    fillColor = [NSColor colorWithRed:0.77 green:0.91 blue:0.96 alpha:1];
   }
-
-  strokeColor = [[self textColor] colorWithAlphaComponent:dropTarget ? 0.4 : 0.2];
 
   [fillColor setFill];
 	[strokeColor setStroke];

@@ -49,7 +49,7 @@
     [theCell setShowDetails:YES];
     [theCell setTextColor:[NSColor colorWithWhite:0.3 alpha:1]];
     [theCell setState:NSOnState];
-    [theCell setCellRadiusFactor:20];
+    [theCell setCellRadiusFactor:30];
     [theCell setIconSize:QSSize32];
     [theCell setDetailsFont:[NSFont systemFontOfSize:12]];
     [theCell setImagePosition:NSImageRight];
