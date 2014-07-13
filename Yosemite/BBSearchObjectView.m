@@ -82,19 +82,17 @@
   NSMutableAttributedString *titleString = [[[NSMutableAttributedString alloc] initWithString:nameString] autorelease];
   [titleString setAttributes:rankedStringIsName ? nameAttributes : detailsAttributes range:NSMakeRange(0, [titleString length])];
 
+  // Bring out the matched letters
   if (abbrString && ![abbrString hasPrefix:@"QSActionMnemonic"]) {
     [titleString addAttribute:NSForegroundColorAttributeName value:rankedStringIsName ? fadedColor : [fadedColor colorWithAlphaComponent:0.8] range:NSMakeRange(0, [titleString length])];
 
-    // Organise displaying the text, underlining the letters typed (in the name)
     NSUInteger i = 0;
     NSUInteger j = 0;
     NSUInteger hits[[titleString length]];
     NSUInteger count = [hitMask getIndexes:(NSUInteger *)&hits maxCount:[titleString length] inIndexRange:nil];
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                rankedStringIsName ? mainColor : fadedColor, NSForegroundColorAttributeName,
-                                rankedStringIsName ? mainColor : fadedColor, NSUnderlineColorAttributeName,
-                                nil];
-
+    NSDictionary *attributes = @{
+      NSForegroundColorAttributeName:                                 rankedStringIsName ? mainColor : fadedColor
+    };
     for(i = 0; i<count; i += j) {
       for (j = 1; i+j<count && hits[i+j-1] +1 == hits[i+j]; j++);
       [titleString addAttributes:attributes range:NSMakeRange(hits[i], j)];
@@ -102,35 +100,32 @@
   } else {
     [titleString addAttribute:NSBaselineOffsetAttributeName value:[NSNumber numberWithDouble:-1.0] range:NSMakeRange(0, [titleString length])];
   }
-
-  // Ranked string and nameString aren't the same. Show 'nameString  ⟷ rankedString' in the UI
-  if (!rankedStringIsName && [drawObject displayName].length) {
-    [titleString addAttribute:NSFontAttributeName value:detailsFont range:NSMakeRange(0,[titleString length])];
-    NSMutableAttributedString *attributedNameString = [[NSMutableAttributedString alloc] initWithString:[drawObject displayName]];
-    [attributedNameString setAttributes:nameAttributes range:NSMakeRange(0, [[drawObject displayName] length])];
-
-    [attributedNameString appendAttributedString:[[[NSAttributedString alloc] initWithString:@" ⟷ " attributes:rankedNameAttributes] autorelease]];
-    // the replaceCharacters... method inserts the new string into the receiver at the start of the work (range.location and range.length are 0)
-    [titleString replaceCharactersInRange:NSMakeRange(0,0) withAttributedString:attributedNameString];
-    [attributedNameString release];
-  }
+//
+//  // Ranked string and nameString aren't the same. Show 'nameString  ⟷ rankedString' in the UI
+//  if (!rankedStringIsName && [drawObject displayName].length) {
+//    [titleString addAttribute:NSFontAttributeName value:detailsFont range:NSMakeRange(0,[titleString length])];
+//    NSMutableAttributedString *attributedNameString = [[NSMutableAttributedString alloc] initWithString:[drawObject displayName]];
+//    [attributedNameString setAttributes:nameAttributes range:NSMakeRange(0, [[drawObject displayName] length])];
+//
+//    [attributedNameString appendAttributedString:[[[NSAttributedString alloc] initWithString:@" ⟷ " attributes:rankedNameAttributes] autorelease]];
+//    // the replaceCharacters... method inserts the new string into the receiver at the start of the work (range.location and range.length are 0)
+//    [titleString replaceCharactersInRange:NSMakeRange(0,0) withAttributedString:attributedNameString];
+//    [attributedNameString release];
+//  }
 
   if (showDetails) {
     NSString *detailsString = [drawObject details];
-    if(detailsString && [detailsString length] && ![detailsString isEqualToString:nameString]) {
-      NSSize detailsSize = NSZeroSize;
-      detailsSize = [detailsString sizeWithAttributes:detailsAttributes];
-      NSSize nameSize = [nameString sizeWithAttributes:nameAttributes];
+    
+    NSRange returnRange = [detailsString rangeOfString:@"\n"];
+    if (returnRange.location != NSNotFound) {
+      detailsString = [detailsString substringToIndex:returnRange.location];
+    }
 
-      CGFloat detailHeight = NSHeight(textDrawRect) - nameSize.height;
-      NSRange returnRange;
-      if (detailHeight<detailsSize.height && (returnRange = [detailsString rangeOfString:@"\n"]) .location != NSNotFound) {
-        detailsString = [detailsString substringToIndex:returnRange.location];
-      }
-      // Append the details string if it exists, and the UI wants it (showDetails BOOL)
-      if (detailsString != nil && detailsString.length) {
-        [titleString appendAttributedString:[[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",detailsString] attributes:detailsAttributes] autorelease]];
-      }
+    detailsAttributes = [detailsAttributes mutableCopy];
+    [detailsAttributes setValue:[NSColor grayColor] forKey:NSForegroundColorAttributeName];
+    
+    if (detailsString && detailsString.length && ![detailsString isEqualToString:nameString]) {
+      [titleString appendAttributedString:[[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",detailsString] attributes:detailsAttributes] autorelease]];
     }
   }
 

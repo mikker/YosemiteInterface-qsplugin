@@ -44,13 +44,14 @@
     [theCell setBackgroundColor:[NSColor clearColor]];
     [theCell setHighlightColor:[NSColor colorWithRed:0 green:0 blue:0 alpha:.1]];
     
-    [theCell setFont:[NSFont fontWithName:@"HelveticaNeue-Thin" size:26]];
+    [theCell setFont:[NSFont fontWithName:@"HelveticaNeue-Light" size:26]];
 
-    [theCell setShowDetails:NO];
-    [theCell setTextColor:[NSColor darkGrayColor]];
+    [theCell setShowDetails:YES];
+    [theCell setTextColor:[NSColor colorWithWhite:0.3 alpha:1]];
     [theCell setState:NSOnState];
     [theCell setCellRadiusFactor:20];
     [theCell setIconSize:QSSize32];
+    [theCell setDetailsFont:[NSFont systemFontOfSize:12]];
     [theCell setImagePosition:NSImageRight];
   }
   
