@@ -50,7 +50,7 @@
     [theCell setTextColor:[NSColor darkGrayColor]];
     [theCell setState:NSOnState];
     [theCell setCellRadiusFactor:20];
-    [theCell setIconSize:QSSize48];
+    [theCell setIconSize:QSSize32];
     [theCell setImagePosition:NSImageRight];
   }
   
@@ -69,7 +69,7 @@
 }
 
 - (NSSize) maxIconSize {
-  return QSSize128;
+  return QSSize32;
 }
 
 - (void)showMainWindow:(id)sender {

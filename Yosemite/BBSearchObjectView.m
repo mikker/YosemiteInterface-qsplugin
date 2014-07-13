@@ -42,7 +42,7 @@
 - (NSRect)titleRectForBounds:(NSRect)theRect
 {
   NSRect rect = theRect;
-  rect.size.width -= rect.size.height - 2 * 64;
+  rect.size.width -= 100;
   rect = NSOffsetRect(rect, 48, 0);
   return rect;
 }
