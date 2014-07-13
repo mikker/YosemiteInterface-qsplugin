@@ -1,6 +1,6 @@
 ### Yosemite's Spotlight sure looks nice doesn't it?
 
-![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot.png)
+![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot-1.0.2.png)
 
 * [v1.0.2](https://github.com/mikker/YosemiteInterface-qsplugin/blob/master/Yosemite-1.0.2.qsplugin.zip?raw=true)
 
