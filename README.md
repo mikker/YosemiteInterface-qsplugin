@@ -1,6 +1,8 @@
-### Yosemite's Spotlight sure looks nice doesn't it?
+### Yosemite.qsplugin
 
-![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot-1.0.2.png)
+**Updated for El Capitan**
+
+![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot.png)
 
 * [Download latest version](https://github.com/mikker/YosemiteInterface-qsplugin/releases/latest)
 * Also check out the [Dark Mode](https://github.com/mikker/YosemiteDarkInterface-qsplugin)
