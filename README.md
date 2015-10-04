@@ -2,7 +2,7 @@
 
 ![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot-1.0.2.png)
 
-* [Download latest version](https://github.com/mikker/YosemiteInterface-qsplugin/releases)
+* [Download latest version](https://github.com/mikker/YosemiteInterface-qsplugin/releases/latest)
 * Also check out the [Dark Mode](https://github.com/mikker/YosemiteDarkInterface-qsplugin)
 
 ### Changelog
