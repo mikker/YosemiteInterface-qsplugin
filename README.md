@@ -2,10 +2,14 @@
 
 ![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot-1.0.2.png)
 
-* [v1.0.2](https://github.com/mikker/YosemiteInterface-qsplugin/blob/master/Yosemite-1.0.2.qsplugin.zip?raw=true)
+* [Download latest version](https://github.com/mikker/YosemiteInterface-qsplugin/releases)
 * Also check out the [Dark Mode](https://github.com/mikker/YosemiteDarkInterface-qsplugin)
 
 ### Changelog
+
+##### 1.0.3
+
+* Use San Fransisco fonts on El Capitan
 
 ##### 1.0.2
 
