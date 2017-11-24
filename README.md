@@ -1,7 +1,5 @@
 ### Yosemite.qsplugin
 
-**Updated for El Capitan**
-
 ![](https://github.com/mikker/YosemiteInterface-qsplugin/raw/master/screenshot.png)
 
 * [Download latest version](https://github.com/mikker/YosemiteInterface-qsplugin/releases/latest)
@@ -11,7 +9,7 @@
 
 ##### 1.0.3
 
-* Use San Fransisco fonts on El Capitan
+* Use San Fransisco fonts on El Capitan (and forward)
 
 ##### 1.0.2
 
