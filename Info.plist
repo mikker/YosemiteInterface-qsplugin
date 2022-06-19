@@ -30,6 +30,17 @@
 		</array>
 		<key>description</key>
 		<string>A simple, elegant theme matching Yosemite&apos;s Spotlight. Light and Dark Mode supported</string>
+		<key>extendedDescription</key>
+		<string>&lt;h2&gt;Yosemite Interface&lt;/h2&gt;
+&lt;p&gt;A beautiful, elegant interface similar to macOS&apos;s spotlight interface.&lt;/p&gt;
+&lt;h3&gt;Colors&lt;/h3&gt;
+&lt;p&gt;Both light mode and dark mode are supported by this plugin. Choose your color preferences by enabling the Yosemite interface in the Appearance preferences, and then clicking the &apos;Customize&apos; button.&lt;/p&gt;
+
+
+&lt;h3&gt;Credits&lt;/h3&gt;
+
+This plugin was created by Mikkel Malmberg (&lt;a href=&quot;https://github.com/mikker/&quot;&gt;@mikker&lt;/a&gt;), and updated by the Patrick Robertson and the Quicksilver Development Team.
+</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
