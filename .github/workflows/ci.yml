@@ -1,0 +1,158 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-11
+    env:
+      QS_BUILD_ONLY: 1
+      QS_SOURCE_ROOT: "/tmp/git/quicksilver"
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Build plugin
+      run: |
+        set -Eeuf -o pipefail
+
+        log() {
+          echo "$*" > /dev/stderr
+        }
+
+        err() {
+          log "error: $*"
+          exit 1
+        }
+
+        json() {
+          # Usage: stdin is json content, $1 is python-formatted query
+          # Example: `xcodebuild -list -json | json '["project"]["configurations"][0]'`
+          python3 -c '
+        import json
+        import sys
+
+        stdin = sys.stdin.read()
+        content = json.loads(stdin)
+
+        json_keys = sys.argv[1]
+        output = eval(f"{content}{json_keys}")
+
+        # Strips quotes if there is a simple result
+        if isinstance(output, str):
+          print(output)
+        # Pretty-print arrays and dicts
+        else:
+          print(json.dumps(output, indent=4))
+        ' "$1"
+        }
+
+        configuration=Release
+
+        mkdir -p "${QS_SOURCE_ROOT}"
+        git clone --recurse-submodules "https://github.com/quicksilver/Quicksilver.git" "${QS_SOURCE_ROOT}"
+        pushd "${QS_SOURCE_ROOT}"
+
+        latest_tag=$(git tag --list --sort=creatordate | tail -n 1)
+        git checkout "${latest_tag}"
+
+        pushd Quicksilver
+        while [[ ! -x "/tmp/QS/build/${configuration}/Quicksilver.app/Contents/MacOS/Quicksilver" ]]; do
+          xcodebuild \
+            -quiet \
+            -destination generic/platform=macos \
+            -configuration "${configuration}" \
+            -scheme 'Quicksilver Distribution' \
+            build || true
+        done
+        popd
+        popd
+
+        project=$(find . -maxdepth 1 -name '*.xcodeproj' -not -iname "*test.xcodeproj" -print -quit)
+
+        if [[ -z "${project}" ]]; then
+          scheme_list=$(xcodebuild -list -json || true)
+        else
+          scheme_list=$(xcodebuild -list -json -project "${project}")
+        fi
+
+        if [[ -z "${scheme_list}" ]]; then
+          err "unable to determine scheme list"
+        fi
+
+        scheme=$(json '["project"]["targets"][0]' <<< "${scheme_list}")
+        log "Using default scheme: ${scheme}"
+
+        # Absence of a project can still build, but will error if `-project` is specified
+        opts=(-configuration "${configuration}" -scheme "${scheme}")
+        if [[ -n "${project}" ]]; then
+          opts+=(-project "${project}")
+        fi
+        SETTINGS=$(xcodebuild "${opts[@]}" -showBuildSettings -json)
+        xcodebuild build -quiet "${opts[@]}"
+        PLUGIN_NAME=$(json '[0]["buildSettings"]["FULL_PRODUCT_NAME"]' <<< "${SETTINGS}")
+
+        echo "PLUGIN_NAME=${PLUGIN_NAME}" >> $GITHUB_ENV
+
+        log "Built ${PLUGIN_NAME} successfully"
+    - name: Archive plugin
+      working-directory: /tmp/QS/build/Release/Quicksilver.app/Contents/PlugIns/
+      run: |
+        tar -czvf "${{ env.PLUGIN_NAME }}.tar.gz" "${{ env.PLUGIN_NAME }}"
+    - name: Upload components for sign action
+      uses: actions/upload-artifact@v2
+      with:
+        name: UNSIGNED_PLUGIN
+        path: /tmp/QS/build/Release/Quicksilver.app/Contents/PlugIns/${{ env.PLUGIN_NAME }}.tar.gz
+
+  sign:
+    needs: build
+    runs-on: macos-11
+    env:
+      MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+      MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+      KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+      SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
+    steps:
+    - name: Download targz artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: UNSIGNED_PLUGIN
+        path: /tmp/QS/build/Release/
+    - name: Unarchive artifact and set plugin name in env
+      run: |
+        cd /tmp/QS/build/Release
+        tar -xzvf *.tar.gz
+        rm -r *.tar.gz
+
+        # Set env.PLUGIN_NAME for use in other steps
+        PLUGIN_NAME=$(find . -name '*.qsplugin' -exec basename {} \; -quit)
+        echo "PLUGIN_NAME=${PLUGIN_NAME}" >> $GITHUB_ENV
+    - name: Sign plugin
+      working-directory: /tmp/QS/build/Release/
+      run: |
+        # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
+        KEYCHAIN_PATH=${RUNNER_TEMP}/app-signing.keychain-db
+        CERTIFICATE_PATH=${RUNNER_TEMP}/build_certificate.p12
+        echo -n "${MACOS_CERTIFICATE}" | base64 --decode --output "${CERTIFICATE_PATH}"
+
+        security create-keychain -p "${KEYCHAIN_PASSWORD}" "${KEYCHAIN_PATH}"
+        security default-keychain -s "${KEYCHAIN_PATH}"
+        security set-keychain-settings -lut 21600 "${KEYCHAIN_PATH}"
+
+        security unlock-keychain -p "${KEYCHAIN_PASSWORD}" "${KEYCHAIN_PATH}"
+
+        security import "${CERTIFICATE_PATH}" -P "${MACOS_CERTIFICATE_PASSWORD}" -A -t cert -f pkcs12 -k "${KEYCHAIN_PATH}"
+        codesign --force -vvv --deep --sign "${SIGNING_IDENTITY}" *.qsplugin
+    - name: Archive signed plugin
+      working-directory: /tmp/QS/build/Release
+      run: |
+        tar -czvf "${{ env.PLUGIN_NAME }}.tar.gz" "${{ env.PLUGIN_NAME }}"
+    - name: Upload document
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.PLUGIN_NAME }}
+        path: /tmp/QS/build/Release/${{ env.PLUGIN_NAME }}.tar.gz
