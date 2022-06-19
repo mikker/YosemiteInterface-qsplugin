@@ -35,7 +35,7 @@
         QSObjectCell *theCell = [theControl cell];
         
         [theControl setResultsPadding:NSMinX([dSelector frame])];
-        [theControl setPreferredEdge:NSMinY([dSelector frame])];
+        [theControl setPreferredEdge:NSMaxY([dSelector frame])];
         [theControl setTextCellFont:[NSFont systemFontOfSize:16]];
         
         [(QSWindow *)[(theControl)->resultController window] setHideOffset:NSMakePoint(NSMaxX([iSelector frame]), 0)];
@@ -74,7 +74,7 @@
 }
 
 - (NSSize) maxIconSize {
-    return QSSize32;
+    return QSSize48;
 }
 
 - (void)showMainWindow:(id)sender {
@@ -117,13 +117,6 @@
 
 - (NSTimeInterval)animationResizeTime:(NSRect)newWindowFrame {
     return 0.01;
-}
-
-- (void)searchObjectChanged:(NSNotification*)notif {
-    [super searchObjectChanged:notif];
-    if ([[notif object] isKindOfClass:[QSCollectingSearchObjectView class]]) {
-        [[(QSCollectingSearchObjectView *)[notif object] cell] setImagePosition:NSImageRight];
-    }
 }
 
 @end
