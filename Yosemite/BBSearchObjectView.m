@@ -8,6 +8,28 @@
 @implementation BBCollectingSearchObjectView
 + (Class)cellClass { return [BBObjectCell class]; }
 
+- (void)drawRect:(NSRect)rect {
+    NSRect frame = [self frame];
+    NSInteger count = [collection count];
+    if (![self currentEditor] && count) {
+        frame.origin = NSZeroPoint;
+        [[self cell] drawWithFrame:frame inView:self];
+        NSInteger i;
+        CGFloat iconSize = collectionSpace?collectionSpace:16;
+        CGFloat opacity = collecting?1.0:0.75;
+        QSObject *object;
+        CGFloat totalWidth = iconSize + 2;
+        for (i = 0; i<count; i++) {
+            object = [collection objectAtIndex:i];
+            NSImage *icon = [object icon];
+            [icon setSize:QSSize16];
+            [icon drawInRect:NSMakeRect(frame.size.width-totalWidth*(count-i), frame.origin.y+2, iconSize, iconSize) fromRect:rectFromSize([icon size]) operation:NSCompositingOperationSourceOver fraction:opacity];
+        }
+    } else {
+        [super drawRect:rect];
+    }
+}
+
 - (NSRect)textEditorFrame {
     NSRect titleFrame = [self frame];
     NSRect editorFrame = NSInsetRect(titleFrame, 48 + NSHeight(titleFrame) /16, NSHeight(titleFrame)/16);
