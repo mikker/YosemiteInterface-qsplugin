@@ -1,3 +1,5 @@
+#import <QSInterface/QSInterface.h>
+
 @interface BBSearchObjectView : QSSearchObjectView
 @end
 

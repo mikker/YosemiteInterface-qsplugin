@@ -2,48 +2,28 @@
 
 @implementation BBSearchObjectView
 + (Class)cellClass { return [BBObjectCell class]; }
+
 @end
 
 @implementation BBCollectingSearchObjectView
 + (Class)cellClass { return [BBObjectCell class]; }
 
-- (void)textDidChange:(NSNotification *)notification
-{
-  NSString *string = [[notification object] string];
-
-  // I have no idea what is meant by 'short circuit'
-  if ([string isEqualToString:@" "]) {
-    [self shortCircuit:self];
-    return;
-  }
-
-  // Don't update text as we go along - wait untill didEnd
-  //[self setObjectValue:[QSObject objectWithString:string]];
-
-  [self setMatchedString:nil];
+- (NSRect)textEditorFrame {
+    NSRect titleFrame = [self frame];
+    NSRect editorFrame = NSInsetRect(titleFrame, 48 + NSHeight(titleFrame) /16, NSHeight(titleFrame)/16);
+    editorFrame.origin = NSMakePoint(NSHeight(titleFrame) /16 + 48, NSHeight(titleFrame)/16);
+    editorFrame = NSIntegralRect(editorFrame);
+    return editorFrame;
 }
 
-- (void)textDidEndEditing:(NSNotification *)notification
-{
-  NSString *string = [[[notification object] string] copy];
-
-  // I have no idea what is meant by 'short circuit'
-  if (![string isEqualToString:@" "]) {
-    // only set the object value if it's not a 'short circuit'
-    [self setObjectValue:[QSObject objectWithString:string]];
-  }
-
-  // Don't realign the image
-  //[[self cell] setImagePosition:-1];
-
-  [self setMatchedString:nil];
-  [[[self currentEditor] enclosingScrollView] removeFromSuperview];
-  [self setCurrentEditor:nil];
-}
 
 @end
 
 @implementation BBObjectCell
+
+- (NSCellImagePosition)preferredImagePosition {
+    return NSImageRight;
+}
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {  
   BOOL isFirstResponder = [[controlView window] firstResponder] == controlView && ![controlView isKindOfClass:[NSTableView class]];
