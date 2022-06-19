@@ -29,10 +29,30 @@
 			<string>Interfaces</string>
 		</array>
 		<key>description</key>
-		<string>A theme matching Yosemite's Spotlight</string>
+		<string>A theme matching Yosemite&apos;s Spotlight</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
+		<key>QSPreferencePanes</key>
+		<dict>
+			<key>BBYosemitePrefs</key>
+			<dict>
+				<key>class</key>
+				<string>BBYosemitePrefs</string>
+				<key>description</key>
+				<string>Yosemite interface preferences</string>
+				<key>icon</key>
+				<string></string>
+				<key>name</key>
+				<string>Yosemite</string>
+				<key>nibBundle</key>
+				<string>com.brnbw.Yosemite</string>
+				<key>nibName</key>
+				<string>BBYosemitePrefs</string>
+				<key>type</key>
+				<string>hidden</string>
+			</dict>
+		</dict>
 		<key>QSCommandInterfaceControllers</key>
 		<dict>
 			<key>Yosemite</key>
