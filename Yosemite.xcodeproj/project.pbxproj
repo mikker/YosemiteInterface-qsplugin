@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		42447D7A193F6C9D0077B4B2 /* BBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42447D79193F6C9D0077B4B2 /* BBBackgroundView.m */; };
 		42447D7D19407DA00077B4B2 /* BBSearchObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42447D7C19407DA00077B4B2 /* BBSearchObjectView.m */; };
-		42447D821940935E0077B4B2 /* ios7-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 42447D7F1940935E0077B4B2 /* ios7-gear.png */; };
-		42447D831940935E0077B4B2 /* ios7-search-strong.png in Resources */ = {isa = PBXBuildFile; fileRef = 42447D801940935E0077B4B2 /* ios7-search-strong.png */; };
+		42447D821940935E0077B4B2 /* gear-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 42447D7F1940935E0077B4B2 /* gear-black.png */; };
+		42447D831940935E0077B4B2 /* search-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 42447D801940935E0077B4B2 /* search-black.png */; };
 		42663058193CC1FA00C0DD31 /* BBYosemiteInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42663057193CC1FA00C0DD31 /* BBYosemiteInterface.xib */; };
+		CD3B1BE2285F2E8C004862D7 /* search-white.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3B1BE0285F2E8C004862D7 /* search-white.png */; };
+		CD3B1BE3285F2E8C004862D7 /* gear-white.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3B1BE1285F2E8C004862D7 /* gear-white.png */; };
+		CD3B1BE5285F2F83004862D7 /* BBYosemitePrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3B1BE4285F2F83004862D7 /* BBYosemitePrefs.xib */; };
+		CD3B1BE8285F33EA004862D7 /* BBYosemitePrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3B1BE7285F33EA004862D7 /* BBYosemitePrefs.m */; };
 		E470B7E31709F3A0000169F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E470B7E21709F3A0000169F2 /* Cocoa.framework */; };
 		E470B7E91709F3A0000169F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E470B7E71709F3A0000169F2 /* InfoPlist.strings */; };
 		E470B7F81709F3A0000169F2 /* BBYosemiteInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = E470B7F71709F3A0000169F2 /* BBYosemiteInterface.m */; };
@@ -22,9 +26,14 @@
 		42447D79193F6C9D0077B4B2 /* BBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBackgroundView.m; sourceTree = "<group>"; };
 		42447D7B19407DA00077B4B2 /* BBSearchObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSearchObjectView.h; sourceTree = "<group>"; };
 		42447D7C19407DA00077B4B2 /* BBSearchObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSearchObjectView.m; sourceTree = "<group>"; };
-		42447D7F1940935E0077B4B2 /* ios7-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-gear.png"; sourceTree = "<group>"; };
-		42447D801940935E0077B4B2 /* ios7-search-strong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-search-strong.png"; sourceTree = "<group>"; };
+		42447D7F1940935E0077B4B2 /* gear-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-black.png"; sourceTree = "<group>"; };
+		42447D801940935E0077B4B2 /* search-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-black.png"; sourceTree = "<group>"; };
 		42663057193CC1FA00C0DD31 /* BBYosemiteInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBYosemiteInterface.xib; sourceTree = "<group>"; };
+		CD3B1BE0285F2E8C004862D7 /* search-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-white.png"; sourceTree = "<group>"; };
+		CD3B1BE1285F2E8C004862D7 /* gear-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-white.png"; sourceTree = "<group>"; };
+		CD3B1BE4285F2F83004862D7 /* BBYosemitePrefs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBYosemitePrefs.xib; sourceTree = "<group>"; };
+		CD3B1BE6285F33EA004862D7 /* BBYosemitePrefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBYosemitePrefs.h; sourceTree = "<group>"; };
+		CD3B1BE7285F33EA004862D7 /* BBYosemitePrefs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBYosemitePrefs.m; sourceTree = "<group>"; };
 		E470B7DF1709F3A0000169F2 /* Yosemite.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yosemite.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E470B7E21709F3A0000169F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E470B7E61709F3A0000169F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -87,9 +96,14 @@
 				42447D7C19407DA00077B4B2 /* BBSearchObjectView.m */,
 				E470B7F61709F3A0000169F2 /* BBYosemiteInterface.h */,
 				E470B7F71709F3A0000169F2 /* BBYosemiteInterface.m */,
+				CD3B1BE4285F2F83004862D7 /* BBYosemitePrefs.xib */,
+				CD3B1BE6285F33EA004862D7 /* BBYosemitePrefs.h */,
+				CD3B1BE7285F33EA004862D7 /* BBYosemitePrefs.m */,
 				42663057193CC1FA00C0DD31 /* BBYosemiteInterface.xib */,
-				42447D7F1940935E0077B4B2 /* ios7-gear.png */,
-				42447D801940935E0077B4B2 /* ios7-search-strong.png */,
+				CD3B1BE1285F2E8C004862D7 /* gear-white.png */,
+				CD3B1BE0285F2E8C004862D7 /* search-white.png */,
+				42447D7F1940935E0077B4B2 /* gear-black.png */,
+				42447D801940935E0077B4B2 /* search-black.png */,
 			);
 			path = Yosemite;
 			sourceTree = "<group>";
@@ -175,10 +189,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3B1BE3285F2E8C004862D7 /* gear-white.png in Resources */,
 				42663058193CC1FA00C0DD31 /* BBYosemiteInterface.xib in Resources */,
 				E470B7E91709F3A0000169F2 /* InfoPlist.strings in Resources */,
-				42447D821940935E0077B4B2 /* ios7-gear.png in Resources */,
-				42447D831940935E0077B4B2 /* ios7-search-strong.png in Resources */,
+				CD3B1BE2285F2E8C004862D7 /* search-white.png in Resources */,
+				42447D821940935E0077B4B2 /* gear-black.png in Resources */,
+				CD3B1BE5285F2F83004862D7 /* BBYosemitePrefs.xib in Resources */,
+				42447D831940935E0077B4B2 /* search-black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +225,7 @@
 				42447D7A193F6C9D0077B4B2 /* BBBackgroundView.m in Sources */,
 				42447D7D19407DA00077B4B2 /* BBSearchObjectView.m in Sources */,
 				E470B7F81709F3A0000169F2 /* BBYosemiteInterface.m in Sources */,
+				CD3B1BE8285F33EA004862D7 /* BBYosemitePrefs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
