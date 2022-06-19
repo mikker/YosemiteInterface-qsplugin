@@ -29,7 +29,7 @@
 			<string>Interfaces</string>
 		</array>
 		<key>description</key>
-		<string>A theme matching Yosemite&apos;s Spotlight</string>
+		<string>A simple, elegant theme matching Yosemite&apos;s Spotlight. Light and Dark Mode supported</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
