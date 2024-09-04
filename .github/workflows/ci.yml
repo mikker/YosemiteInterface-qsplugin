@@ -118,7 +118,7 @@ jobs:
       SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
     steps:
     - name: Download targz artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: UNSIGNED_PLUGIN
         path: /tmp/QS/build/Release/
